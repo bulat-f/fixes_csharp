@@ -4,7 +4,7 @@ class Program
     public class Array
     {
         public int _creditAmount;
-        public double _interestRate;
+        public virtual double _interestRate {get; set;} = 0;
         public double _monthlyFee;
         public int _billingPeriod;
         public double _fullAmount;
@@ -38,7 +38,7 @@ class Program
     }
     public class Person : Array
     {
-        double _interestRate = 15;
+        public override double _interestRate {get; set;} = 15;
         public int _inCome;
         public int _expenses;
         public int _remain;
@@ -63,12 +63,12 @@ class Program
     }
     public class Pensioner : Person
     {
-        public double _interestRate = 10;
+        public override double _interestRate { get; set; } = 10;
     }
 
     public class Parent : Person
     {
-        public double _interesRate = 13;
+        public override  double _interestRate { get; set; } = 13;
     }
     static void Main(string[] args)
     {
